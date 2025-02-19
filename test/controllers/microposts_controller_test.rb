@@ -21,7 +21,7 @@ class MicropostsControllerTest < ActionDispatch::IntegrationTest
     puts "Micropost count before test: #{Micropost.count}"
     assert_difference("Micropost.count") do
       puts "Micropost data: #{@micropost.user_id}"
-      post microposts_url, params: { micropost: { content: "Valid content", user_id: @micropost.user_id } }
+      post microposts_url, params: { micropost: { content: "Valid content", user_id: @user.id } }
       puts "Micropost count before test: #{Micropost.count}"
     end
 
